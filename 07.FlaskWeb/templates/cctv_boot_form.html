@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}서울시 구별 CCTV/인구 현황{% endblock %}
+{% block subtitle %}서울시 구별 CCTV/인구 현황{% endblock %}
+
+{% block content %}
+    <form action="/cctv_boot" method="post">
+        항목:
+        <select name="column">
+            {% for column in columns %}
+                <option value="{{column}}">{{column}}</option>
+            {% endfor %}
+        </select>
+        &nbsp;&nbsp;&nbsp;컬러맵:
+        <select name="colormap">
+            {% for colormap in colormaps %}
+                <option value="{{colormap}}">{{colormap}}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="제출">
+    </form>
+{% endblock %}
