@@ -25,7 +25,7 @@ def get_station_map(root_path, stations):
     df = pd.DataFrame({'이름': stations, '주소': road_addr_list})
 
     # 위도, 경도 좌표 구하기
-    filename = os.path.join(root_path, 'static/keys/카카오api.txt')
+    filename = os.path.join(root_path, 'static/keys/카카오apiKey.txt')
     with open(filename) as file:
         kakao_key = file.read()
     base_url = 'https://dapi.kakao.com/v2/local/search/address.json'
