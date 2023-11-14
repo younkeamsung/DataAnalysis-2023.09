@@ -6,11 +6,11 @@
             $('#optionModal').modal('show');
         }
         function send() {
+            $('#yoloimg').attr({src: "{{url_for('static', filename='img/please-wait.gif')}}", width:498});
             let color = $("input[name='color']:checked").val();
             let linewidth = $('#linewidth').val();
             let fontsize = $('#fontsize').val();
             let imagefile = $('#yoloimage')[0].files[0];
-            console.log('파일명은', imagefile.name);
             let formData = new FormData();
             formData.append('color', color);
             formData.append('linewidth', linewidth);
@@ -43,7 +43,7 @@
             </td>
         </tr>
     </table>
-    <div class="d-flex justify-content-center">
+    <div class="d-flex justify-content-center" style="margin-bottom: 60px;">
         <img id="yoloimg">
     </div>
 {% endblock %}
